@@ -9,8 +9,17 @@
  * For n = 152, the output should be 52
  *
  */
-function deleteDigit(/* n */) {
-  throw new Error('Not implemented');
+function deleteDigit(n) {
+  const arr = Array.from(String(n), Number);
+  const lowest = Math.min.apply(null, arr);
+  for (let i = arr.length; i >= 0; i--) {
+    if (arr[i] === lowest) {
+      arr.splice(i, 1);
+      break;
+    }
+  }
+  return (Number(arr.join('')));
 }
 
 module.exports = deleteDigit;
+// npm run test ./test/05-delete-digit-tests.js
