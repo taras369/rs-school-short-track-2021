@@ -11,17 +11,23 @@
  *
  */
 class Stack {
-  push(/* element */) {
-    throw new Error('Not implemented');
+  constructor () {
+    this.arr = [];
+    // this.head = null;
+  }
+
+  push(element) {
+    this.arr.push(element);
   }
 
   pop() {
-    throw new Error('Not implemented');
+    return this.arr.pop();
   }
 
   peek() {
-    throw new Error('Not implemented');
+    return this.arr[this.arr.length - 1];
   }
 }
 
 module.exports = Stack;
+// npm run test ./test/13-stack-tests.js
